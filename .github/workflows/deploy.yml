@@ -1,6 +1,6 @@
 name: Deploy to AKS Cluster
 on:
-  pull_request:
+  push:
     branches:
     - main
 
