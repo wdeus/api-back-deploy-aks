@@ -34,6 +34,10 @@ jobs:
         container-registry-password: ${{ secrets.ACR_PASSWORD }}
         secret-name: k8s-secret
 
+    - name: Update deployment image
+      run: |
+        sed -i 's|<IMAGE_PLACEHOLDER>|springapppixel.azurecr.io/backend:${{ github.sha }}|' k8s/deployment.yaml
+
     - uses: Azure/k8s-deploy@v1
       with:
         manifests: |
