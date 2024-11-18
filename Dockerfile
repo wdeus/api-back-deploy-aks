@@ -1,5 +1,9 @@
 FROM maven:3.8.8-eclipse-temurin-17 AS build
 
+# Definindo variáveis de ambiente no Dockerfile
+ENV SPRING_DATASOURCE_URL=jdbc:postgresql://bd-pixel.postgres.database.azure.com:5432/postgres
+ENV SPRING_DATASOURCE_USERNAME=pixel
+ENV SPRING_DATASOURCE_PASSWORD=NeymarJr2024
 
 WORKDIR /app
 
