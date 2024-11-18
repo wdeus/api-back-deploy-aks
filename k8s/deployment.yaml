@@ -18,11 +18,11 @@ spec:
         ports:
         - containerPort: 8080
         env:
-        - name: DATABASE_HOST
+        - name: SPRING_DATASOURCE_URL
           value: jdbc:postgresql://bd-pixel.postgres.database.azure.com:5432/postgres
-        - name: DATABASE_USERNAME
+        - name: SPRING_DATASOURCE_USERNAME
           value: pixel
-        - name: DATABASE_PASSWORD
+        - name: SPRING_DATASOURCE_PASSWORD
           value: NeymarJr2024
         - name: DATABASE_NAME    
           value: postgres   
