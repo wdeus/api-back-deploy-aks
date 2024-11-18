@@ -15,15 +15,17 @@ spec:
       containers:
       - name: api
         image: <IMAGE_PLACEHOLDER>
+        ports:
+        - containerPort: 8080
         env:
         - name: DATABASE_HOST
-          value: "jdbc:postgresql://bd-pixel.postgres.database.azure.com:5432/postgres"
+          value: jdbc:postgresql://bd-pixel.postgres.database.azure.com:5432/postgres
         - name: DATABASE_USERNAME
-          value: "pixel"
+          value: pixel
         - name: DATABASE_PASSWORD
-          value: "NeymarJr2024"
+          value: NeymarJr2024
         - name: DATABASE_NAME    
-          value: "postgres"   
+          value: postgres   
         resources:
           requests:
             cpu: 250m
@@ -31,5 +33,3 @@ spec:
           limits:
             cpu: 500m
             memory: 512Mi
-        ports:
-        - containerPort: 80
