@@ -47,4 +47,5 @@ jobs:
           springapppixel.azurecr.io/backend:${{ github.sha }}
         imagepullsecrets: |
           k8s-secret
+        namespace: ingress-basic
           
