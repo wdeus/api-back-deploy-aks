@@ -27,14 +27,6 @@ jobs:
         cluster-name: pixelCluster
         resource-group: gr-pixel-containers
         
-    # Create Secret manually in ingress-basic namespace
-    - run: |
-        kubectl create secret docker-registry k8s-secret \
-          --docker-server=springapppixel.azurecr.io \
-          --docker-username=${{ secrets.ACR_USERNAME }} \
-          --docker-password=${{ secrets.ACR_PASSWORD }} \
-          --namespace=ingress-basic
-
     - name: Update deployment image
       run: |
         sed -i 's|<IMAGE_PLACEHOLDER>|springapppixel.azurecr.io/backend:${{ github.sha }}|' k8s/deployment.yaml
